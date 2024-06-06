@@ -7,20 +7,21 @@ public class Ejercicio2 {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         List<Integer> listaEdades = new ArrayList<>();
-        System.out.println("Introduce una edad: (negativo para salir)");
-        int edad = s.nextInt();
+        int edad;
         double sumaEdad = 0;
-        int contador = 0;
-        int bajoMedia = 0;
+        int contador = -1;
+        int bajoMedia = -1;
         int sobreMedia = 0;
-        while(edad >= 0){
+
+        do {
+            System.out.println("Introduce una edad (negativo para salir):");
+            edad = s.nextInt();
             sumaEdad += edad;
             contador++;
             listaEdades.add(edad);
-            edad = s.nextInt();
             s.nextLine();
         }
-
+        while(edad >= 0);
         double media = sumaEdad / contador;
 
         List<Integer> CopiaLista = List.copyOf(listaEdades);
